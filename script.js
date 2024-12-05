@@ -1,29 +1,6 @@
 // Variables to store the API Key and chat messages
 let apiKey = localStorage.getItem('apiKey');
 
-// Load API Key from localStorage when the page loads
-window.addEventListener('DOMContentLoaded', () => {
-    const savedKey = localStorage.getItem('apiKey');
-    if (savedKey) {
-        document.getElementById('api-key').value = savedKey;
-        apiKey = savedKey; // Store in variable
-        console.log(`Loaded API Key: ${apiKey}`);
-    }
-});
-
-// Save API Key to localStorage
-document.getElementById('save-key-btn').addEventListener('click', () => {
-    const keyInput = document.getElementById('api-key').value.trim();
-    if (keyInput) {
-        localStorage.setItem('apiKey', keyInput);
-        apiKey = keyInput; // Update variable
-        alert('API Key saved!');
-        console.log(`API Key saved: ${apiKey}`);
-    } else {
-        alert('Please enter a valid API Key!');
-    }
-});
-
 // Handle sending messages
 document.getElementById('send-btn').addEventListener('click', sendMessage);
 

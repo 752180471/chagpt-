@@ -59,7 +59,7 @@ return getOpenAIResponse();
 }
 
   async function getOpenAIResponse() {
-    const response = await fetch('https://api.openai.com/v1/completions', {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -71,8 +71,8 @@ return getOpenAIResponse();
             max_tokens: 50,
         }),
     });
-
-   const data = await response.json();
-      return data
+return response
+  // const data = await response.json();
+      
    // console.log(data);
 }

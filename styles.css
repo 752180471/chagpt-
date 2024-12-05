@@ -14,8 +14,8 @@ body {
 }
 
 .chat-container {
-    width: 400px;
-    height: 500px;
+    width: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     border: 1px solid #ccc;

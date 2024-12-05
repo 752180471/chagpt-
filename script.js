@@ -44,6 +44,10 @@ function displayMessage(message, sender) {
 }
 
 function generateAIResponse(userMessage) {
+
+  
+
+return getOpenAIResponse();
     // Simple AI response logic
     if (userMessage.toLowerCase().includes('hello')) {
         return 'Hello! How can I assist you today?';
@@ -52,4 +56,22 @@ function generateAIResponse(userMessage) {
     } else {
         return 'I am not sure how to respond to that. Can you try asking something else?';
     }
+}
+
+  async function getOpenAIResponse() {
+    const response = await fetch('https://api.openai.com/v1/completions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+            model: 'gpt-3.5-turbo',
+            prompt: 'Hello, OpenAI!',
+            max_tokens: 50,
+        }),
+    });
+return response
+ //   const data = await response.json();
+   // console.log(data);
 }

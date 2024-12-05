@@ -71,7 +71,8 @@ return getOpenAIResponse();
             max_tokens: 50,
         }),
     });
-return response
- //   const data = await response.json();
+
+   const data = await response.json();
+      return data
    // console.log(data);
 }
